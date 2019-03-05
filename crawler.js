@@ -2,7 +2,7 @@ const cheerio = require('cheerio');
 const fetch = require("node-fetch");
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const csvWriter = createCsvWriter({
-    path: './FCA_Partner.csv',
+    path: './FCA_Wealth.csv',
     header: [
         {id: 'company', title: 'Company Name'},
         {id: 'address', title: 'Address'},
@@ -11,11 +11,11 @@ const csvWriter = createCsvWriter({
     ]
 });
 
-const SEARCH_LINK = "https://register.fca.org.uk/shpo_searchresultspage?CMC%7CFSF%7CAUF=1&FSF=1&search=Partner&TOKEN=3wq1nht7eg7tr";
+//const SEARCH_LINK = "https://register.fca.org.uk/shpo_searchresultspage?CMC%7CFSF%7CAUF=1&FSF=1&search=Partner&TOKEN=3wq1nht7eg7tr";
 //const SEARCH_LINK = "https://register.fca.org.uk/shpo_searchresultspage?CMC%7CFSF%7CAUF=1&FSF=1&search=Manager&TOKEN=3wq1nht7eg7tr";
 //const SEARCH_LINK = "https://register.fca.org.uk/shpo_searchresultspage?CMC%7CFSF%7CAUF=1&FSF=1&search=Investment&TOKEN=3wq1nht7eg7tr";
 //const SEARCH_LINK = "https://register.fca.org.uk/shpo_searchresultspage?CMC%7CFSF%7CAUF=1&FSF=1&search=Advic&TOKEN=3wq1nht7eg7tr";
-//const SEARCH_LINK = "https://register.fca.org.uk/shpo_searchresultspage?CMC%7CFSF%7CAUF=1&FSF=1&search=wealth&TOKEN=3wq1nht7eg7tr";
+const SEARCH_LINK = "https://register.fca.org.uk/shpo_searchresultspage?CMC%7CFSF%7CAUF=1&FSF=1&search=wealth&TOKEN=3wq1nht7eg7tr";
 //const SEARCH_LINK = "https://register.fca.org.uk/shpo_searchresultspage?CMC%7CFSF%7CAUF=1&FSF=1&search=Advis&TOKEN=3wq1nht7eg7tr"
 
 const fillRecords = async () => {
